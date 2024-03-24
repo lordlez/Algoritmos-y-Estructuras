@@ -9,4 +9,6 @@ Para el desarrollo de este proyecto se utilizó:
 
 • C
 
-• CodeBlocks versión 20.03
+• CodeBlocks versión 20.03 (en windows)
+
+• Visual Studio Code (en mac)
