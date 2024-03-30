@@ -1,5 +1,5 @@
-#ifndef EJ2_3_H
-#define EJ2_3_H
+#ifndef EJ_2_3_H
+#define EJ_2_3_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -23,6 +23,7 @@ typedef struct{
 }tProducto;
 
 
+int cargar_archivo_binario(const char *ruta);
 
 
 

@@ -2,6 +2,9 @@
 
 int main(){
 
+    char rutaBin[] = "datos.dat";
+
+    cargar_archivo_binario(rutaBin);
     
 
     return 0;
