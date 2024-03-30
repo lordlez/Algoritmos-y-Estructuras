@@ -1,8 +1,9 @@
-#ifndef HEADER_H
-#define HEADER_H
+#ifndef EJ2_3_H
+#define EJ2_3_H
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 typedef struct{
     int dia;
@@ -11,17 +12,18 @@ typedef struct{
 }tFecha;
 
 typedef struct{
-    char codProd[7];
+    char codigo[7];
     char descripcion[15];
     char proveedor[15];
     tFecha fCompra;
-    tFecha fVenta;
+    tFecha fVencimiento;
     int cantidad;
-    float compra;
-    float venta;
+    float pCompra;
+    float pVenta;
 }tProducto;
 
-int crear_archivo(char *ruta);
+
+
 
 
 #endif
