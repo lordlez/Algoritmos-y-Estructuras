@@ -1,5 +1,7 @@
 #include "ej_2_7_mejorado.h"
-#include "../Ej-2.1/pila.c"
+//#include "../Ej-2.1/pila.c" //Pila estatica
+#include "../Ej-2.2/pila.c" //Pila dinamica
+
 
 void cargar_pila(tPila *pp, char *vec, int longitud){
     int i = 0;
