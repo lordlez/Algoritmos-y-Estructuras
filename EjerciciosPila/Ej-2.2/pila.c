@@ -15,20 +15,16 @@ void vaciar_pila(tPila *pp){
 }
 
 int apilar(tPila *pp, const void *pd, unsigned tam){
-    tNodo *nuevo = malloc(sizeof(tNodo));
-    void *elemNodo = malloc(tam);
-
-    if(!nuevo || !elemNodo){
+    tNodo *nuevo;
+    if((nuevo = (tNodo*)malloc(sizeof(tNodo))) == NULL || (nuevo->info = malloc(tam)) == NULL){
         free(nuevo);
-        free(elemNodo);
-        return 0;
+        return 0;//SIN MEMORIA
     }
-    nuevo->info = elemNodo;
+    memcpy(nuevo->info, pd, tam);
     nuevo->tamInfo = tam;
-    memcpy(elemNodo, pd, tam);
     nuevo->sig = *pp;
     *pp = nuevo;
-    return 1; //TODO OK
+    return 1;//TODO OK
 }
 
 int desapilar(tPila *pp, void *pd, unsigned tam){
