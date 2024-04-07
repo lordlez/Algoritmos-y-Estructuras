@@ -28,7 +28,6 @@ void ordenar_archivo_con_pilas(const char *ruta, tPila *pp1, tPila *pp2){
             if( strcmp(prod.codigo, prod2.codigo) > 0){ //si lo del archivo es mas grande que lo de la pila2
                 apilar(pp2, &prod, sizeof(tProducto));
             }else{ //si lo del archivo no es mas grande que lo que hay en ambas pilas
-                printf("Error");
                 if( strcmp(prod1.codigo, prod2.codigo) > 0){ //lo de la pila1 es mas grande que lo de la pila2
                     desapilar(pp1, &prod1, sizeof(tProducto));
                     apilar(pp2, &prod1, sizeof(tProducto));
