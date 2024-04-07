@@ -31,6 +31,5 @@ int main(){
     cargar_pila_a_vector(&pilaResultado, vecResultado, &cer);
     mostrar_vector(vecResultado, cer);
 
-
     return 0;
 }

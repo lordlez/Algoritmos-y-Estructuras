@@ -1,5 +1,5 @@
 #include "ej_2_7.h"
-#include "../Ej-2.1/pila.c"
+#include "../Ej-2.2/pila.c"
 
 void cargar_pila(tPila *pp, int *vec, int longitud){
     int numero, i = 0;
