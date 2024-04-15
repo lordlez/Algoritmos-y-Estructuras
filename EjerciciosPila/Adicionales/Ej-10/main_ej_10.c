@@ -19,7 +19,7 @@ int main(){
     }
 
     if(ver_tope(&pilaB, &elementoB, sizeof(tElemento))){
-        printf("Tope pilaB: %d\n", elementoA->numero);
+        printf("Tope pilaB: %d\n", elementoB->numero);
     }
 
     comparar_dos_pilas(&pilaA, &pilaB);

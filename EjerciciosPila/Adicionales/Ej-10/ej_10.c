@@ -11,7 +11,7 @@ void cargar_pila(tPila *pp, tElemento *el){
             basta = 0;
         }else{
             el->pos++;
-            apilar(pp, &el, sizeof(tElemento));
+            apilar(pp, el, sizeof(tElemento));
         }
         printf("Se apilo el numero: %d\n", el->numero);
     }
@@ -19,30 +19,23 @@ void cargar_pila(tPila *pp, tElemento *el){
 
 void comparar_dos_pilas(tPila *pilaA, tPila *pilaB){
     tElemento elA, elB;
-    int num = 1, posi = 1, cant = 1, igual = 1;
+    int num = 1, posi = 1, igual = 1;
+
     while(!pila_vacia(pilaA) && !pila_vacia(pilaB)){
-        desapilar(pilaA, &elA.numero, sizeof(tElemento));
-        desapilar(pilaB, &elB.numero, sizeof(tElemento));
-        printf("Numero A: %d\n", elA.numero);
-        printf("Numero B: %d\n", elB.numero);
-        if(elA.numero == elB.numero){
-            if(elA.pos == elB.pos){
-                printf("Pos A: %d\n", elA.pos);
-                printf("Pos B: %d\n", elB.pos);
-                igual = 1;
-            }else{
-                posi = 0;
-            }
-        }else{
+        desapilar(pilaA, &elA, sizeof(tElemento));//desapilo el registro
+        desapilar(pilaB, &elB, sizeof(tElemento));//desapilo el registro
+        printf("Numero A: %d\n", elA.numero);//muestro el numero de ese registro desapilado
+        printf("Numero B: %d\n", elB.numero);//muestro el numero de ese registro desapilado
+        if(elA.numero != elB.numero || elA.pos != elB.pos){
             num = 0;
+            posi = 0;
         }
     }
-    if(!pila_vacia(pilaA)){
-        igual = 0;
+
+    if(!pila_vacia(pilaA) || !pila_vacia(pilaB)){
+        igual = 0;// porque alguna pila tiene datos y la otra no tiene pilas
     }
-    if(!pila_vacia(pilaB)){
-        igual = 0;
-    }
+    
     if(igual == 1){
         if(posi == 1){
             if(num == 1){
