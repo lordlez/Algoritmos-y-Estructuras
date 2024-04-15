@@ -1,5 +1,5 @@
 #include "ej_5.h"
-#include "../../Ej-2.2/pila.c"
+#include "../../Ej-2.1/pila.c"
 
 void cargar_pila(tPila *pp){
     int i = 0, numero;
@@ -13,10 +13,11 @@ void cargar_pila(tPila *pp){
 
 void cargar_pila_a_vector(tPila *ppr, int *vecr, int *cer){
     int numero;
+    int *pri = vecr;
     while(!pila_vacia(ppr)){
         desapilar(ppr, &numero, sizeof(int));
-        *vecr = numero;
-        vecr++;
+        *pri = numero;
+        pri++;
         (*cer)++;
         printf("Pase al vector el numero: %d\n", numero);
     }

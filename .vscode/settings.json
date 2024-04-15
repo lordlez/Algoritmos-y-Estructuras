@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "coladinamica.h": "c",
-        "header.h": "c"
+        "header.h": "c",
+        "pila.h": "c",
+        "colaestatica.h": "c"
     }
 }
