@@ -20,8 +20,8 @@ typedef struct{
 
 void crear_cola(tCola *pc);
 void vaciar_cola(tCola *pc);
-int poner_en_cola(tCola *pc, const void *pd, unsigned tam);
-int sacar_de_cola(tCola *pc, void *pd, unsigned tam);
+int encolar(tCola *pc, const void *pd, unsigned tam);
+int desencolar(tCola *pc, void *pd, unsigned tam);
 int ver_primero(const tCola *pc, void *pd, unsigned tam);
 int cola_llena(const tCola *pc, unsigned tam);
 int cola_vacia(const tCola *pc);

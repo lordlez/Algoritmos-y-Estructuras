@@ -3,6 +3,7 @@
         "coladinamica.h": "c",
         "header.h": "c",
         "pila.h": "c",
-        "colaestatica.h": "c"
+        "colaestatica.h": "c",
+        "ej_3_5.h": "c"
     }
 }

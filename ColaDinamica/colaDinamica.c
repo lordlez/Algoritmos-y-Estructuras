@@ -16,7 +16,7 @@ void vaciar_cola(tCola *pc){
     pc->ult = NULL;
 }
 
-int poner_en_cola(tCola *pc, const void *pd, unsigned tam){
+int encolar(tCola *pc, const void *pd, unsigned tam){
     tNodo *nuevo;
     if((nuevo = (tNodo*)malloc(sizeof(tNodo)))==NULL||(nuevo->info = malloc(tam))==NULL){
         free(nuevo);
@@ -34,7 +34,7 @@ int poner_en_cola(tCola *pc, const void *pd, unsigned tam){
     return 1;
 }
 
-int sacar_de_cola(tCola *pc, void *pd, unsigned tam){
+int desencolar(tCola *pc, void *pd, unsigned tam){
     tNodo *elim;
     if(pc->pri == NULL){
         return 0;

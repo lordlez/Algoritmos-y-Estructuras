@@ -11,17 +11,17 @@ int main(){
     crear_cola(&cola);
 
     if(!cola_llena(&cola, sizeof(cad1))){
-        poner_en_cola(&cola, &cad1, sizeof(cad1));
+        encolar(&cola, &cad1, sizeof(cad1));
         ver_primero(&cola, &cad4, sizeof(cad4));
         puts(cad4);
     }
 
     if(!cola_vacia(&cola)){
-        sacar_de_cola(&cola, &cad4, sizeof(cad4));
+        desencolar(&cola, &cad4, sizeof(cad4));
     }
 
     if(!cola_llena(&cola, sizeof(cad2))){
-        poner_en_cola(&cola, &cad2, sizeof(cad2));
+        encolar(&cola, &cad2, sizeof(cad2));
         ver_primero(&cola, &cad4, sizeof(cad4));
         puts(cad4);
     }
