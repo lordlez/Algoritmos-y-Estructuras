@@ -1,5 +1,4 @@
-#include "listaSimple.h"
-
+#include "lista.h"
 
 void crear_lista(tLista *pl){
     *pl = NULL;
@@ -28,10 +27,10 @@ int poner_al_inicio(tLista *pl, const void *pd, unsigned tam){
     return 1;
 }
 
-int poner_al_final(tLista *pl, void *pd, unsigned tam){
+int poner_al_final(tLista *pl, const void *pd, unsigned tam){
     tNodo *nuevo;
     while(*pl){
-        pl = &(*pl)->sig
+        pl = &(*pl)->sig;
     }
     if((nuevo = (tNodo*)malloc(sizeof(tNodo)))==NULL||(nuevo->info = malloc(tam))==NULL){
         free(nuevo);
@@ -111,7 +110,7 @@ int ver_ultimo(const tLista *pl, void *pd, unsigned tam){
     return 1;
 }
 
-void ordenar(tLista *pl, int (*cmp)(const void *, const void *)){
+void ordenar_lista(tLista *pl, int (*cmp)(const void *, const void *)){
     tLista lord = NULL;
     tLista *plord;
     tNodo *nodo;
@@ -128,7 +127,7 @@ void ordenar(tLista *pl, int (*cmp)(const void *, const void *)){
     *pl = lord;
 }
 
-void mostrar(tLista *pl, void(*mostrar)(void*)){
+void recorrer_lista(tLista *pl, void(*mostrar)(void*)){
     while(*pl){
         mostrar((*pl)->info);
         pl = &(*pl)->sig;
@@ -152,18 +151,6 @@ int lista_vacia(const tLista *pl){
     return 0;
 }
 
-int cmp_enteros(const void *e1, const void *e2){
-    int *num1 = (int*)e1;
-    int *num2 = (int*)e2;
-    return *num1-*num2;
-}
-
-void mostrar_lista(void *e){
-    int *elm = (int*)e;
-    printf("%d", *elm);
-    printf("\n");
-}
-
 int buscar_clave(tLista *pl, void *pd, unsigned tam, int (*cmp)(const void*, const void*)){
     while(*pl && cmp((*pl)->info, pd)){
         pl = &(*pl)->sig;
@@ -184,5 +171,3 @@ tLista buscar_clave_sub_lista(tLista *pl, const void *pd, int(*cmp)(const void*,
     }
     return *pl;
 }
-
-

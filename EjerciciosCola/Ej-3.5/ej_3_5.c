@@ -1,47 +1,42 @@
 #include "ej_3_5.h"
-#include "../Ej-3.2/colaD.c"
+#include "../../ColaDinamica/colaDinamica.c"
 
-int numero_aleatorio(int min, int max){
-    return min + rand() % (max - min + 1);
-}
+int simulacion_cajero(tCola *pc){
+    srand(time(NULL));//genero una semilla aleatoria
+    //rango = (FIN + 1) - INICIO
+    //int rango = 6 - 1;
+    //printf("%d", rand() % 6); //numeros random desde el cero al 5
+    //printf("%d", rand() % rango + 1); //numeros random entre 1 y 5
 
-void cajero(tCola *pc){
-    int clientes_vacios = 0;
-    int intervalo_llegada, tiempo_atencion, tiempo_espera ,tiempo_espera_siguiente;
+    int demoraCajero = 0; //tiempo que tardo en el cajero
+    int llegoCola = 0; // tiempo que tardo en llegar a la cola
+    int demoraCola = 0; //tiempo de espera en la cola
+    int vecesVacias = 0; //no hay clientes en la cola
+    int clientesAtendidos = 0;
 
-    srand(time(NULL)); //inicializo la semilla para numeros aleatorios
+    while(vecesVacias < 5){
 
-    while(clientes_vacios < 5){
-        intervalo_llegada = numero_aleatorio(1,3);
-        sleep(intervalo_llegada);//esperar el intervalo de llegada
-        tiempo_atencion = numero_aleatorio(1, 5);
+        llegoCola = rand() % 9 + 1; // va de (0 a 8) + 1 va de 1 a 9
+        demoraCajero = rand() % 5 + 1; // va de (0 a 4) + 1 va de 1 a 5
 
+        if(!cola_llena(pc, sizeof(int))){
+            encolar(pc, &llegoCola, sizeof(int));
+        }
+        
         if(cola_vacia(pc)){
-            printf("Cliente atendido en %d minutos\n", tiempo_atencion);
+            demoraCola = 0;
+            printf("Cliente atendido en %d minutos\n", demoraCajero);
+            clientesAtendidos++;
         }else{
-            desencolar(pc, &tiempo_espera, sizeof(int));
-            tiempo_atencion += tiempo_espera;//tiempo que espere en la cola mas el tiempo de atencion en el cajero
-            printf("Cliente atendido en %d minutos(espero %d minutos en la cola)\n", tiempo_atencion, tiempo_espera);
+            desencolar(pc, &llegoCola, sizeof(int));
+
         }
 
-        //genero el tiempo de espera del siguiente cliente
-        tiempo_espera_siguiente = numero_aleatorio(1, 5);
 
-        if(cola_llena(pc, sizeof(int))){
-            //si la cola esta llena se descarta el tiempo de espera del siguiente cliente
-            printf("Cola llena, no se puede atender al cliente\n");
-        }else{
-            //si hay espacio se encola el tiempo de espera del siguiente
-            encolar(pc, &tiempo_espera_siguiente, sizeof(int));
-        }
 
-        if(cola_vacia(pc)){
-            clientes_vacios++;
-            printf("Cola vacia por %d vez", clientes_vacios);
-        }
+
+
     }
 
-    //vacio la cola al finalizar
-    vaciar_cola(pc);
-
+    return 1;
 }
