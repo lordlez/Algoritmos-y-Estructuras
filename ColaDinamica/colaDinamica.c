@@ -61,7 +61,13 @@ int ver_primero(const tCola *pc, void *pd, unsigned tam){
 }
 
 int cola_llena(const tCola *pc, unsigned tam){
-    return 0;
+    tNodo *nodo = malloc(sizeof(tNodo));
+    void *elem = malloc(tam);
+
+    free(nodo);
+    free(elem);
+
+    return nodo==NULL||elem==NULL;
 }
 
 int cola_vacia(const tCola *pc){

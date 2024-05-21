@@ -6,7 +6,8 @@
         "colaestatica.h": "c",
         "ej_3_5.h": "c",
         "piladinamica.h": "c",
-        "filter.h": "c"
+        "filter.h": "c",
+        "juego.h": "c"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

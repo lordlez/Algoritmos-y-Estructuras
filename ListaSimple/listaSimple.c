@@ -128,7 +128,7 @@ void ordenar(tLista *pl, int (*cmp)(const void *, const void *)){
     *pl = lord;
 }
 
-void mostrar(tLista *pl, void(*mostrar)(void*)){
+void recorrer_lista(tLista *pl, void (*mostrar)(void*)){
     while(*pl){
         mostrar((*pl)->info);
         pl = &(*pl)->sig;
@@ -164,8 +164,8 @@ void mostrar_lista(void *e){
     printf("\n");
 }
 
-int buscar_clave(tLista *pl, void *pd, unsigned tam, int (*cmp)(const void*, const void*)){
-    while(*pl && cmp((*pl)->info, pd)){
+int buscar_clave(tLista *pl,void *pd, unsigned tam, int (*cmp)(const void *, const void *)){
+    while(*pl && cmp(pd, (*pl)->info) != 0){
         pl = &(*pl)->sig;
     }
     if(!*pl){
@@ -185,4 +185,17 @@ tLista buscar_clave_sub_lista(tLista *pl, const void *pd, int(*cmp)(const void*,
     return *pl;
 }
 
-
+int buscar_cla_y_eliminar(tLista *pl, void *pd, unsigned tam, int (*cmp)(const void *, const void *)) {
+    tNodo *elim;
+    while (*pl && cmp(pd, (*pl)->info) != 0) {
+        pl = &(*pl)->sig;
+    }
+    if (!*pl) {
+        return 0;
+    }
+    elim = *pl;
+    *pl = elim->sig;
+    free(elim->info);
+    free(elim);
+    return 1;
+}
