@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1717543610 source:d:\unlam\primercuatri2024\progra\algoritmos-y-estructuras\arbolcb\arbolcb.c
+	"arbolCB.h"
+
+1717543327 d:\unlam\primercuatri2024\progra\algoritmos-y-estructuras\arbolcb\arbolcb.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1717540440 source:d:\unlam\primercuatri2024\progra\algoritmos-y-estructuras\arbolcb\main.c
+	"arbolCB.h"
+

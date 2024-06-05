@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1717016761 source:d:\unlam\primercuatri2024\progra\algoritmos-y-estructuras\repasocodigo\repaso\funciones.c
+	"header.h"
+
+1717016749 d:\unlam\primercuatri2024\progra\algoritmos-y-estructuras\repasocodigo\repaso\header.h
+	<stdio.h>
+	<stdlib.h>
+
+1717016775 source:d:\unlam\primercuatri2024\progra\algoritmos-y-estructuras\repasocodigo\repaso\main.c
+	"header.h"
+
