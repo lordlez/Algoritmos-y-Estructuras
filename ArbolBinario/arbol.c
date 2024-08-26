@@ -210,3 +210,9 @@ int completo_hasta(const tArbol *pa, int n){
     }
     return completo_hasta(&(*pa)->izq, n-1) && completo_hasta(&(*pa)->der, n-1);
 }
+
+// accion en recorrer pre, in y pos
+void imprimir(void *info, void *param){
+    int *i = (int*)info;
+    printf("-%d-", *i);
+}

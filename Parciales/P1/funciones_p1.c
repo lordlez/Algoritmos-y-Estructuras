@@ -35,7 +35,7 @@ int poner_orden(tLista *pl, const void *pd, unsigned tam, int(*cmp)(const void*,
 
 int leer_archivo(const char *ruta, tLista *lista){
     FILE *txt;
-    char linea[MAX_LINEA]; //aca guardo la linea leida del archivo
+    char linea[MAX_LINEA]; //aca guardo la linea leida del archivo sin normalizar
     char palabras[MAX_LINEA]; //aca guardo la linea normalizada separada por espacio para poder tener mejor visualizacion de las palabras
 
     txt = fopen(ruta, "rt");
@@ -115,7 +115,7 @@ void recorrer(tLista *pl, void(*mostrar)(void*)){
 }
 
 void mostrar(void *dato){
-    printf("%s\n", *(char**)dato);
+    printf("%s\n", (char*)dato);
 }
 
 

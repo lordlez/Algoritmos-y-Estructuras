@@ -76,7 +76,7 @@ int poner_orden(tListaD *pld, const void *pd, unsigned tam, int(*cmp)(const void
         while(act->ant && cmp(pd, act->info)<0){
             act = act->ant;
         }
-        while(act->sig && cmp(pd, act->sig)>0){
+        while(act->sig && cmp(pd, act->info)>0){
             act = act->sig;
         }
         comparar = cmp(pd, act->info);
@@ -180,7 +180,7 @@ void ordenar_lista(tListaD *pld, int(*cmp)(const void*, const void*)){
                 unsigned tam = act->tamInfo;
                 marca = 1;
                 act->info = act->ant->info;
-                act->ant->ingo = inf;
+                act->ant->info = inf;
                 act->tamInfo = act->ant->tamInfo;
                 act->ant->tamInfo = tam;
             }

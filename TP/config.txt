@@ -1,2 +1,0 @@
-Rounds: 3
-Tiempo por round: 10
