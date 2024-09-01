@@ -10,4 +10,5 @@ void mostrar(tProducto *prod);
 
 
 
-#endif
+
+#endif // EJ_2_6_H

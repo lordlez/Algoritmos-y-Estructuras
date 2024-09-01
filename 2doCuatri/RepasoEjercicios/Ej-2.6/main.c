@@ -1,4 +1,5 @@
-#include "ej_2_6.h"
+#include "ej-2_6.h"
+
 
 int main(){
     char ruta[] = "../Ej-2.3/datos.dat";

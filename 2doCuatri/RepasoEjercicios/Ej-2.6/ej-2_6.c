@@ -1,5 +1,5 @@
-#include "ej_2_6.h"
-#include "../Ej-2.2/pila.c"
+#include "ej-2_6.h"
+#include "../Ej-2.2/pilaDinamica.c"
 
 int ordenar_archivo_con_pilas(const char *ruta, tPila *p1, tPila *p2){
     FILE *pf;
