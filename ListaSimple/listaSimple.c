@@ -195,6 +195,7 @@ int buscar_cla_y_eliminar(tLista *pl, void *pd, unsigned tam, int (*cmp)(const v
     }
     elim = *pl;
     *pl = elim->sig;
+    memcpy(pd, (*pl)->info, MIN(tam, (*pl)->tamInfo));
     free(elim->info);
     free(elim);
     return 1;
