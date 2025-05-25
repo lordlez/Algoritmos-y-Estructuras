@@ -12,7 +12,7 @@ El propósito principal de este repositorio es simplificar y centralizar el estu
 * 💻 **Ejercicios Resueltos:** Para que puedas practicar y verificar tus soluciones.
 * ✨ **Material Adicional Útil:** Cualquier otro recurso que pueda ayudarte a comprender mejor y aprobar la cursada.
 
-Queremos que este espacio sea una herramienta práctica y de fácil acceso para que tengas todo lo necesario para triunfar en la materia. ¡Olvídate de los apuntes desordenados!
+Quiero que este espacio sea una herramienta práctica y de fácil acceso para que tengas todo lo necesario para triunfar en la materia. ¡Olvídate de los apuntes desordenados!
 
 ---
 
