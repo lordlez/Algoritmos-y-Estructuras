@@ -27,7 +27,3 @@ Este proyecto se centra en el lenguaje C y utiliza los siguientes entornos de de
     * 🍎 **Visual Studio Code:** Una excelente alternativa para usuarios de macOS (y también popular en otros sistemas).
 
 ---
-
-<p align="center">
-  🚀 ¡Prepárate para potenciar tus conocimientos y superar todos los desafíos de la materia! 🚀
-</p>
